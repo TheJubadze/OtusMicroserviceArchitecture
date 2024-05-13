@@ -1,0 +1,1 @@
+docker run -d --name health-ckecker -p 8080:8000 health-ckecker:1.0.0
