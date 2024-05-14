@@ -13,11 +13,11 @@ spec:
         app: k8s-health-checker
     spec:
       containers:
-      - name: k8s-health-checker
-        image: jiubadze/health-checker
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 8000
+        - name: k8s-health-checker
+          image: jiubadze/health-checker
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8000

@@ -26,10 +26,11 @@ func hostname(w http.ResponseWriter, req *http.Request) {
 		panic(err)
 	}
 
-	w.Write([]byte(fmt.Sprintf("<h1>VERSION 3: Hello from Health Checker %v</h1>", name)))
+	w.Write([]byte(fmt.Sprintf("<h1>VERSION 4: Hello from Health Checker %v</h1>", name)))
 }
 
 func main() {
+	http.HandleFunc("/", hostname)
 	http.HandleFunc("/health", health)
 	http.HandleFunc("/hostname", hostname)
 	http.ListenAndServe(":8000", nil)
