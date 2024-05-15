@@ -5,6 +5,7 @@ metadata:
   labels:
     name: k8s-health-checker-ingr
 spec:
+  ingressClassName: nginx
   rules:
     - host: arch.homework
       http:

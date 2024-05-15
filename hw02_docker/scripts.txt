@@ -1,0 +1,4 @@
+docker run -d --name health-ckecker -p 8080:8000 health-checker:1.0.0
+docker build . -t jiubadze/health-checker:latest -t jiubadze/health-checker:5.0.0
+docker push jiubadze/health-checker --all-tags
+k set image deploy k8s-health-checker k8s-health-checker=jiubadze/health-checker:5.0.0
