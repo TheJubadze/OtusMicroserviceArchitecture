@@ -1,0 +1,6 @@
+global:
+    postgresql:
+        auth:
+          postgresPassword: "P@ssw0rd1!"
+          username: "admin"
+          password: "P@ssw0rd1!"

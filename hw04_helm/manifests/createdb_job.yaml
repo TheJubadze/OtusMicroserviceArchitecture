@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: postgresql-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: migration
+          image: postgres
+          command: ["psql", "-h localhost", "-U admin", "-d root", "-a -f /var/dump/users.sql"]
+          volumeMounts:
+            - mountPath: /var/dump
+              name: dump-volume
+      volumes:
+        - name: dump-volume
+          hostPath:
+            path: /mnt/c/dev/OtusMicroserviceArchitecture/hw04_helm
+            type: Directory
+      restartPolicy: Never

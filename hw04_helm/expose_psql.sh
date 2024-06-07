@@ -1,0 +1,1 @@
+kubectl port-forward --namespace default svc/mypsql-postgresql 5432:5432
