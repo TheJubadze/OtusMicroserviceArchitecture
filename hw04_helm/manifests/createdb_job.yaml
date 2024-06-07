@@ -8,13 +8,14 @@ spec:
       containers:
         - name: migration
           image: postgres
-          command: ["psql", "-h localhost", "-U admin", "-d root", "-a -f /var/dump/users.sql"]
+          command: ["sh", "-c", "/home/docker/createdb.sh"]
           volumeMounts:
-            - mountPath: /var/dump
+            - mountPath: /mnt/scripts
               name: dump-volume
+              readOnly: false
       volumes:
         - name: dump-volume
           hostPath:
-            path: /mnt/c/dev/OtusMicroserviceArchitecture/hw04_helm
+            path: /mnt/scripts
             type: Directory
       restartPolicy: Never
