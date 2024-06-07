@@ -8,7 +8,7 @@ spec:
       containers:
         - name: migration
           image: postgres
-          command: ["sh", "-c", "/home/docker/createdb.sh"]
+          command: ["sh", "-c", "/mnt/scripts/createdb.sh"]
           volumeMounts:
             - mountPath: /mnt/scripts
               name: dump-volume
